@@ -1,14 +1,14 @@
 import json
 import os
-from dotenv import load_dotenv
-# необходимо установить через: pip install google-api-python-client
 
+# необходимо установить через: pip install google-api-python-client
 from googleapiclient.discovery import build
+
 import isodate
 
+
 # YT_API_KEY скопирован из гугла и вставлен в переменные окружения
-load_dotenv()
-api_key = os.environ.get('YT_API_KEY')
+api_key: str = os.getenv('YT_API_KEY')
 
 # создать специальный объект для работы с API
 youtube = build('youtube', 'v3', developerKey=api_key)
